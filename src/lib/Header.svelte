@@ -2,7 +2,6 @@
     export let navbar_search
     export let navbar_cart
 
-    console.log(navbar_search[0].src)
 </script>
 
 <section>

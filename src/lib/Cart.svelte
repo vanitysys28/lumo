@@ -67,7 +67,7 @@
                         <div class="quantity-selector-container">
                             <div class="quantity-selector">
                                 <img
-                                    src="./src/images/Cart/Less.svg"
+                                    src="../static/images/Cart/Less.svg"
                                     on:click={() => decreaseQuantity(cartitem)}
                                     alt=""
                                 />
@@ -75,7 +75,7 @@
                                     {cartitem.quantity}
                                 </p>
                                 <img
-                                    src="./src/images/Cart/more.svg"
+                                    src="../static/images/Cart/more.svg"
                                     on:click={() => increaseQuantity(cartitem)}
                                     alt=""
                                 />

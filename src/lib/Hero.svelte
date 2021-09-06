@@ -4,17 +4,17 @@
 
     <div class="container">
         <div class="images-left">
-            <img class="hero-image-1" src="./src/images/Hero/hero-image-1.png" alt="" />
-            <img class="hero-image-1-shadow"src="./src/images/Hero/hero-image-1-shadow.png"alt=""/>
+            <img class="hero-image-1" src="/images/Hero/hero-image-1.png" alt="" />
+            <img class="hero-image-1-shadow"src="/images/Hero/hero-image-1-shadow.png"alt=""/>
         </div>
         <h1 class="hero-text">Enlighten<br/>your<br/>life.</h1>
         <div class="images-right">
-            <img class="hero-image-2-shadow" src="./src/images/Hero/hero-image-2-shadow.png" alt=""/>
-            <img class="hero-image-2" src="./src/images/Hero/hero-image-2.png" alt="" />
+            <img class="hero-image-2-shadow" src="/images/Hero/hero-image-2-shadow.png" alt=""/>
+            <img class="hero-image-2" src="/images/Hero/hero-image-2.png" alt="" />
         </div>
     </div>
     <div class="background" style="display:flex;justify-content:center">
-        <img class="elipse" src="./src/images/Hero/hero-background-elipse.png" alt="">
+        <img class="elipse" src="/images/Hero/hero-background-elipse.png" alt="">
     </div>
 </section>
 

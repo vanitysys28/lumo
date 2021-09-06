@@ -3,8 +3,8 @@
 <section>
     <div>
         <h2 class="title">Newsletter</h2>
-        <img class="blob1" src="./src/images/Blobs/blob1.svg" alt="" />
-        <img class="blob2" src="./src/images/Blobs/blob2.svg" alt="" />
+        <img class="blob1" src="/images/Blobs/blob1.svg" alt="" />
+        <img class="blob2" src="/images/Blobs/blob2.svg" alt="" />
     </div>
 
     <p>Sales, news and more. <br />Delivered straight to your inbox.</p>
