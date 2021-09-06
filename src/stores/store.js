@@ -77,7 +77,7 @@
 
     export let navbar_cart = [{
         alt: "Cart",
-        src: "/images/Header/cart.svg"
+        src: "/images/Header/Cart.svg"
     }]
 
     export let cartitems = writable([])
