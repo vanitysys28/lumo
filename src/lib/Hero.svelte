@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="background" style="display:flex;justify-content:center">
-        <img class="elipse" src="/images/Hero/hero-background-elipse.png" alt="">
+        <img class="elipse" src="/images/Hero/hero-background-elipse.svg" alt="">
     </div>
 </section>
 
