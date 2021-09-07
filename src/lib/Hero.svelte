@@ -4,13 +4,54 @@
 
     <div class="container">
         <div class="images-left">
-            <img class="hero-image-1" src="/images/Hero/hero-image-1.png" alt="" />
-            <img class="hero-image-1-shadow"src="/images/Hero/hero-image-1-shadow.png"alt=""/>
+             <picture class="hero-image-1">
+                <source
+                    type="image/webp"
+                    srcset="/images/Hero/hero-image-1.webp"
+                />
+                <source
+                    type="image/png"
+                    srcset="/images/Hero/hero-image-1.png"
+                />
+                <img src="/images/Hero/hero-image-1.png" alt="" />
+            </picture>
+ <picture class="hero-image-1-shadow">
+                <source
+                    type="image/webp"
+                    srcset="/images/Hero/hero-image-1-shadow.webp"
+                />
+                <source
+                    type="image/png"
+                    srcset="/images/Hero/hero-image-1-shadow.png"
+                />
+                <img src="/images/Hero/hero-image-1-shadow.png" alt="" />
+            </picture>
         </div>
         <h1 class="hero-text">Enlighten<br/>your<br/>life.</h1>
         <div class="images-right">
-            <img class="hero-image-2-shadow" src="/images/Hero/hero-image-2-shadow.png" alt=""/>
-            <img class="hero-image-2" src="/images/Hero/hero-image-2.png" alt="" />
+             <picture class="hero-image-2-shadow">
+                <source
+                    type="image/webp"
+                    srcset="/images/Hero/hero-image-2-shadow.webp"
+                />
+                <source
+                    type="image/png"
+                    srcset="/images/Hero/hero-image-2-shadow.png"
+                />
+                <img src="/images/Hero/hero-image-2-shadow.png" alt="" />
+            </picture>
+             <picture class="hero-image-2">
+                <source
+                    type="image/webp"
+                    srcset="/images/Hero/hero-image-2.webp"
+                />
+                <source
+                    type="image/png"
+                    srcset="/images/Hero/hero-image-2.png"
+                />
+                <img src="/images/Hero/hero-image-2.png" alt="" />
+            </picture>
+
         </div>
     </div>
     <div class="background" style="display:flex;justify-content:center">
@@ -45,8 +86,8 @@
     }
     .hero-image-1-shadow {
         width: 400px;
-        margin-top: -420px;
-        margin-left:-20px;
+        margin-top: -460px;
+        margin-left:-50px;
     }
     .hero-image-2 {
         margin-top: -400px;
@@ -55,8 +96,8 @@
     }
     .hero-image-2-shadow {
         width: 400px;
-        margin-bottom:-20px;
-        margin-left: -20px;
+        margin-bottom:-50px;
+        margin-left: -30px;
     }
     
     .elipse {

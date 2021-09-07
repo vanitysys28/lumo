@@ -15,25 +15,31 @@
                     <div>{product.price}<span>€</span></div>
                 </a>
                 <a href="/products/{product.title}">
-                    <img src={product.featured_image} alt="" />
+                    <picture>
+                        <source
+                            type="image/webp"
+                            srcset={product.webp_featured_image}
+                        />
+                        <source
+                            type="image/png"
+                            srcset={product.featured_image}
+                        />
+                        <img src={product.featured_image} alt="" />
+                    </picture>
                 </a>
             </div>
         {/each}
     </div>
 
     <div class="button">
-        
-           
-        
-            <a href="/catalog">
-                <button>See more</button>
-            </a> 
-        
+        <a href="/catalog">
+            <button>See more</button>
+        </a>
     </div>
 </section>
 
 <style>
-     a {
+    a {
         color: #000;
         text-decoration: none;
     }
@@ -59,6 +65,9 @@
     }
 
     .cards img {
+        width: 400px;
+    }
+    .cards picture {
         width: 400px;
     }
     .button {

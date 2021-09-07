@@ -38,11 +38,32 @@
     <div class="container">
         <div class="media">
             <div class="featured-image">
-                <img src={product[0].featured_image} alt="" />
+                <picture>
+                        <source
+                            type="image/webp"
+                            srcset={product[0].webp_featured_image}
+                        />
+                        <source
+                            type="image/png"
+                            srcset={product[0].featured_image}
+                        />
+                        <img src={product[0].featured_image} alt="" />
+                    </picture>
             </div>
             <div class="secondary-images">
                 {#each product[0].images as image}
-                    <img src={image.img} alt="" />
+                    <!-- <img src={image.img} alt="" /> -->
+                    <picture>
+                        <source
+                            type="image/webp"
+                            srcset={product[0].webp_images[0].img}
+                        />
+                        <source
+                            type="image/png"
+                            srcset={image.img}
+                        />
+                        <img src={image.img} alt="" />
+                    </picture>
                 {/each}
             </div>
         </div>

@@ -1,14 +1,12 @@
 <script>
-   export let paymentmethods
-   export let socials
+    export let paymentmethods;
+    export let socials;
 </script>
 
 <section>
     <div class="container-left">
         <ul class="links">
-            <a href="/">
-                <li>Homepage</li>
-            </a>
+            <li><a href="/">Homepage</a></li>
             <li>Contact</li>
             <li>Search</li>
         </ul>
@@ -34,7 +32,7 @@
 </section>
 
 <style>
-     a {
+    a {
         color: #000;
         text-decoration: none;
     }
@@ -68,8 +66,8 @@
         align-items: center;
     }
     .social-item img {
-        width:30px;
-        margin-right: 10px
+        width: 30px;
+        margin-right: 10px;
     }
     .container-right {
         display: flex;

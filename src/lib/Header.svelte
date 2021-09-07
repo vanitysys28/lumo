@@ -15,10 +15,10 @@
                 <li><a href="/catalog" >Catalog</a></li>
                 <li><a href="/about-us">About Us</a></li>
                 <li>
-                    <a href="{'#'}"><img src={navbar_search[0].src} alt="" /></a>
+                    <a href="{'#'}"><img src={navbar_search[0].src} alt={navbar_search[0].alt} /></a>
                 </li>
                 <li>
-                    <a href="/cart"><img src={navbar_cart[0].src} alt="" /></a>
+                    <a href="/cart"><img src={navbar_cart[0].src} alt={navbar_cart[0].alt} /></a>
                 </li>
             </ul>
         </div>

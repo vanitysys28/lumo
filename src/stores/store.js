@@ -6,7 +6,14 @@
             featured: true,
             price: 160,
             quantity: 1,
+            webp_featured_image: "/images/Products/Kona.webp",
             featured_image: "/images/Products/Kona.png",
+            webp_images: [
+                { img: "/images/Products/Kona.webp" },
+                { img: "/images/Products/Kona.webp" },
+                { img: "/images/Products/Kona.webp" },
+                { img: "/images/Products/Kona.webp" },
+            ],
             images: [
                 { img: "/images/Products/Kona.png" },
                 { img: "/images/Products/Kona.png" },
@@ -22,7 +29,14 @@
             featured: true,
             price: 180,
             quantity: 1,
+            webp_featured_image: "/images/Products/Hikare.webp",
             featured_image: "/images/Products/Hikare.png",
+            webp_images: [
+                { img: "/images/Products/Hikare.webp" },
+                { img: "/images/Products/Hikare.webp" },
+                { img: "/images/Products/Hikare.webp" },
+                { img: "/images/Products/Hikare.webp" },
+            ],
             images: [
                 { img: "/images/Products/Hikare.png" },
                 { img: "/images/Products/Hikare.png" },
@@ -38,7 +52,14 @@
             featured: true,
             price: 130,
             quantity: 1,
+            webp_featured_image: "/images/Products/Sutikku.webp",
             featured_image: "/images/Products/Sutikku.png",
+            webp_images: [
+                { img: "/images/Products/Sutikku.webp" },
+                { img: "/images/Products/Sutikku.webp" },
+                { img: "/images/Products/Sutikku.webp" },
+                { img: "/images/Products/Sutikku.webp" },
+            ],
             images: [
                 { img: "/images/Products/Sutikku.png" },
                 { img: "/images/Products/Sutikku.png" },
