@@ -55,11 +55,22 @@
             {#each $cartitems as cartitem}
                 {#if cartitem.quantity > 0}
                     <div class="table-products">
-                        <img
+                        <picture>
+                        <source class="product-images"
+                            type="image/webp"
+                            srcset={cartitem.webp_featured_image}
+                        />
+                        <source class="product-images"
+                            type="image/png"
+                            srcset={cartitem.featured_image}
+                        />
+                        <img class="product-images" src={cartitem.featured_image} alt="" />
+                    </picture>
+                        <!-- <img
                             class="product-images"
                             src={cartitem.featured_image}
                             alt=""
-                        />
+                        /> -->
                         <div class="product-information">
                             <p class="product-title">{cartitem.title}</p>
                             <p class="product-variant">{cartitem.variant}</p>

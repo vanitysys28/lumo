@@ -27,6 +27,7 @@
                 title: product[0].title,
                 variant: product[0].variant,
                 featured_image: product[0].featured_image,
+                webp_featured_image: product[0].webp_featured_image,
                 quantity: 1,
                 price: product[0].price,
             });
