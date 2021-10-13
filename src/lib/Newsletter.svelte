@@ -1,10 +1,11 @@
 <script></script>
 
 <section>
+    <img class="blob1" src="/images/Blobs/blob1.svg" alt="" />
+        <img class="blob2" src="/images/Blobs/blob2.svg" alt="" />
     <div>
         <h2 class="title">Newsletter</h2>
-        <img class="blob1" src="/images/Blobs/blob1.svg" alt="" />
-        <img class="blob2" src="/images/Blobs/blob2.svg" alt="" />
+        
     </div>
 
     <p>Sales, news and more. <br />Delivered straight to your inbox.</p>
@@ -12,23 +13,28 @@
     <div class="container">
         <div class="background">
             <input class="input" type="text" />
-            <button>Subscribe</button>
+            <button>Subscribe<img class="subscribe-button-image" src="/images/Newsletter/subscribe-mobile.svg" alt=""></button>
         </div>
     </div>
 </section>
 
 <style>
+    section {
+        position: relative
+    }
+    .subscribe-button-image {
+        display:none;
+    }
     .blob1 {
         position: absolute;
         height: 500px;
         right: 0;
-        top: 1300px;
+        bottom: 0;
     }
     .blob2 {
         position: absolute;
         height: 500px;
         left: 0;
-        top: 1650px;
     }
     section {
         background-color: #fff;
@@ -75,6 +81,40 @@
         margin:0
     }
     .silent {
-        font-size: 100%;
+        font-size: 16px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .blob1 {
+            height: 200px;
+            top: -100px;
+        }
+        .blob2 {
+            height: 200px;
+            bottom: -100px;
+        }
+        .title {
+            font-size: 28px;
+        }
+        .subscribe-button-image {
+            display: block;
+        }
+        button {
+            font-size: 0;
+            display: flex;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+        button img {
+            width: 20px;
+        }
+        .background {
+            display:flex;
+        }
+        .input {
+            width: 200px;
+            height: 40px;
+        }
     }
 </style>

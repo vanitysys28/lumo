@@ -9,12 +9,6 @@
         {#each products as product}
             <div class="cards">
                 <a href="/products/{product.title}">
-                    <div>{product.title}</div>
-                </a>
-                <a href="/products/{product.title}">
-                    <div>{product.price}<span>€</span></div>
-                </a>
-                <a href="/products/{product.title}">
                     <picture>
                         <source
                             type="image/webp"
@@ -26,6 +20,12 @@
                         />
                         <img src={product.featured_image} alt="" />
                     </picture>
+                </a>
+                <a href="/products/{product.title}">
+                    <div>{product.title}</div>
+                </a>
+                <a href="/products/{product.title}">
+                    <div>{product.price}<span>€</span></div>
                 </a>
             </div>
         {/each}
@@ -50,6 +50,7 @@
     }
     .container {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-evenly;
         margin-bottom: 20px;
     }
@@ -68,7 +69,7 @@
         width: 400px;
     }
     .cards picture {
-        width: 400px;
+        max-width: 400px;
     }
     .button {
         padding: 20px 0;
@@ -86,5 +87,26 @@
         color: white;
         padding: 10px 80px;
         cursor: pointer;
+    }
+
+    @media only screen and (max-width: 768px) {
+        section {
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+        .cards {
+            width:45%;
+            margin: 0 0 20px 0;
+        }
+        .cards img {
+            width: 100%;
+        }
+        .container {
+            justify-content: space-between;
+            margin-bottom: 0px;
+        }
     }
 </style>

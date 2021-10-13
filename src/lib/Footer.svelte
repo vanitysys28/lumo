@@ -39,6 +39,7 @@
     section {
         padding: 50px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         font-weight: bold;
         text-transform: uppercase;
@@ -86,5 +87,17 @@
     .payments img {
         padding: 5px;
         width: 50px;
+    }
+       @media only screen and (max-width: 768px) {
+      .links {
+        display: none;
+    }
+      .social {
+        display: none;
+    }
+    section {
+        justify-content: center
+    }
+
     }
 </style>

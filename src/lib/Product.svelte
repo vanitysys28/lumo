@@ -15,22 +15,24 @@
     );
 
     let producttitle = product[0].title;
-    let cartproduct
+    let cartproduct;
 
     function addToCart() {
         if ($cartitems.find((o) => o.title === producttitle)) {
             console.log("Product already in cart, increased quantity");
-            cartproduct = $cartitems.find((o) => o.title === producttitle)
-            cartproduct.quantity += 1
+            cartproduct = $cartitems.find((o) => o.title === producttitle);
+            cartproduct.quantity += 1;
+            sessionStorage.setItem("cart", JSON.stringify($cartitems));
         } else {
             $cartitems.push({
                 title: product[0].title,
                 variant: product[0].variant,
                 featured_image: product[0].featured_image,
-                webp_featured_image: product[0].webp_featured_image,
+                // webp_featured_image: product[0].webp_featured_image,
                 quantity: 1,
                 price: product[0].price,
             });
+            sessionStorage.setItem("cart", JSON.stringify($cartitems));
         }
     }
 </script>
@@ -38,33 +40,33 @@
 <section>
     <div class="container">
         <div class="media">
-            <div class="featured-image">
-                <picture>
-                        <source
-                            type="image/webp"
-                            srcset={product[0].webp_featured_image}
-                        />
-                        <source
-                            type="image/png"
-                            srcset={product[0].featured_image}
-                        />
-                        <img src={product[0].featured_image} alt="" />
-                    </picture>
-            </div>
+            <img
+                class="featured-image"
+                src={product[0].featured_image}
+                alt=""
+            />
+            <!-- <picture>
+                    <source
+                        type="image/webp"
+                        srcset={product[0].webp_featured_image}
+                    />
+                    <source
+                        type="image/png"
+                        srcset={product[0].featured_image}
+                    />
+                    <img src={product[0].featured_image} alt="" />
+                </picture> -->
             <div class="secondary-images">
                 {#each product[0].images as image}
-                    <!-- <img src={image.img} alt="" /> -->
-                    <picture>
+                    <img src={image.img} alt="" />
+                    <!-- <picture>
                         <source
                             type="image/webp"
                             srcset={product[0].webp_images[0].img}
                         />
-                        <source
-                            type="image/png"
-                            srcset={image.img}
-                        />
+                        <source type="image/png" srcset={image.img} />
                         <img src={image.img} alt="" />
-                    </picture>
+                    </picture> -->
                 {/each}
             </div>
         </div>
@@ -185,5 +187,45 @@
         height: 50px;
         width: 200px;
         margin: 0 0 0 10px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .title {
+            font-size: 28px;
+        }
+
+        .container {
+            flex-direction: column;
+        }
+
+        .media {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .featured-image {
+            width: 90%;
+        }
+
+        .information-panes button {
+            width: 100px;
+            font-size: 12px;
+        }
+
+        p {
+            text-align: center;
+        }
+        .secondary-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 90%;
+        }
+        .secondary-images img {
+            width: 100px;
+            margin: 10px 1px;
+            padding: 0;
+        }
     }
 </style>

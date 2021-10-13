@@ -26,6 +26,7 @@
         font-weight: bold;
         background-color: #f2f2f2;
         padding:40px 0;
+        z-index: -2;
     }
     .container {
         display: flex;
@@ -52,5 +53,27 @@
         position: absolute;
         width: 700px;
         margin-top: -20px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .title {
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 16px;
+            width: 85%;
+            z-index: 1;
+        }
+        .shipping {
+        position: absolute;
+        width: 300px;
+        margin-top: 15px;
+    }
+    .support {
+        position: absolute;
+        width: 300px;
+        margin-top: 15px;
+    }
     }
 </style>

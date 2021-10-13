@@ -1,32 +1,34 @@
 <script>
-    export let products
+    export let products;
 </script>
 
 <section>
     <h2 class="title">Products</h2>
     <div class="container">
-
         <div class="subcontainer">
             {#each products as product}
                 <div class="cards">
                     <a href="/products/{product.title}">
-                        <picture>
-                        <source
-                            type="image/webp"
-                            srcset={product.webp_featured_image}
-                        />
-                        <source
-                            type="image/png"
-                            srcset={product.featured_image}
-                        />
                         <img src={product.featured_image} alt="" />
-                    </picture>
+                        <!-- <picture>
+                            <source
+                                type="image/webp"
+                                srcset={product.webp_featured_image}
+                            />
+                            <source
+                                type="image/png"
+                                srcset={product.featured_image}
+                            />
+                            <img src={product.featured_image} alt="" />
+                        </picture> -->
                     </a>
                     <a href="/products/{product.title}">
                         <h3 class="product-title">{product.title}</h3>
                     </a>
                     <a href="/products/{product.title}">
-                        <p class="product-price">{product.price}<span>€</span></p>
+                        <p class="product-price">
+                            {product.price}<span>€</span>
+                        </p>
                     </a>
                 </div>
             {/each}
@@ -51,7 +53,7 @@
         text-transform: capitalize;
     }
     .container {
-        display:flex;
+        display: flex;
         justify-content: center;
     }
     .subcontainer {
@@ -65,9 +67,37 @@
         overflow: hidden;
     }
     .product-title {
-        margin-bottom:0
+        margin-bottom: 0;
     }
     .product-price {
-        margin-top: 0
+        margin-top: 0;
+    }
+
+    @media only screen and (max-width: 768px) {
+        section {
+            padding: 20px
+        }
+        .title {
+            font-size: 28px;
+        }
+        .product-title {
+            font-size: 24px;
+        }
+        .product-price {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .cards {
+            text-align: center;
+            text-transform: capitalize;
+            width: 45%;
+            padding: 0;
+        }
+        .cards img {
+            width: 100%;
+        }
+        h3 {
+            margin-top: 10px;
+        }
     }
 </style>
