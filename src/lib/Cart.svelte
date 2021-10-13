@@ -4,12 +4,7 @@
 
     onMount(() => {
         $cartitems = JSON.parse(sessionStorage.getItem("cart"));
-        if  ($cartitems.length === 0) {
-            document.querySelector(".empty-cart").textContent = "Cart is empty"
-        }
     });
-
-    let subtotal;
 
     const increaseQuantity = (product) => {
         for (let cartitem of $cartitems) {
@@ -42,14 +37,12 @@
         (sum, cartitem) => sum + cartitem.price * cartitem.quantity,
         0
     );
-
-    $: console.log($cartitems);
 </script>
 
 <section>
     <h2 class="title">Cart</h2>
     {#if $cartitems.length === 0}
-        <h3 class="empty-cart"> </h3>
+        <h3 class="empty-cart">Cart is empty</h3>
     {:else}
         <div class="table">
             <div class="table-header">
