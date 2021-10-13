@@ -3,7 +3,9 @@
     import { onMount } from "svelte";
 
     onMount(() => {
-        $cartitems = JSON.parse(sessionStorage.getItem("cart"));
+        if ($cartitems.length > 0) {
+            $cartitems = JSON.parse(sessionStorage.getItem("cart"));
+        }
     });
 
     const increaseQuantity = (product) => {
@@ -32,6 +34,8 @@
             }
         }
     };
+
+    let subtotal;
 
     $: subtotal = $cartitems.reduce(
         (sum, cartitem) => sum + cartitem.price * cartitem.quantity,
