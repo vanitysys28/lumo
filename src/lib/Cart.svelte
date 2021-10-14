@@ -3,9 +3,12 @@
     import { onMount } from "svelte";
 
     onMount(() => {
-        if ($cartitems.length > 0) {
-            $cartitems = JSON.parse(sessionStorage.getItem("cart"));
-        }
+        // sessionStorage.setItem("cart", "[]");
+        // if (sessionStorage.getItem("cart") == null) {
+        //     $cartitems = sessionStorage.setItem("cart", "[]");
+        // } else {
+        $cartitems = JSON.parse(sessionStorage.getItem("cart"));
+        // }
     });
 
     const increaseQuantity = (product) => {
@@ -35,9 +38,16 @@
         }
     };
 
-    let subtotal;
+    // let subtotal;
 
-    $: subtotal = $cartitems.reduce(
+    // $: if ($cartitems.length > 0) {
+    //     subtotal = $cartitems.reduce(
+    //         (sum, cartitem) => sum + cartitem.price * cartitem.quantity,
+    //         0
+    //     );
+    // }
+
+     $: subtotal = $cartitems.reduce(
         (sum, cartitem) => sum + cartitem.price * cartitem.quantity,
         0
     );

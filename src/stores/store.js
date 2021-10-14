@@ -1,4 +1,5 @@
     import { writable } from 'svelte/store';
+    import { browser } from "$app/env";
 
     export let products = [{
             title: "kona",
@@ -98,4 +99,7 @@
         src: "/images/Header/Cart.svg"
     }]
 
-    export let cartitems = writable([])
+    export let cartitems = writable(
+        browser && JSON.parse(sessionStorage.getItem("cart")) || []);
+
+    cartitems.subscribe((val) => browser && (sessionStorage.cart = JSON.stringify(val)));
