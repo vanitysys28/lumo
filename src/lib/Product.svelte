@@ -75,50 +75,53 @@
             <h3 class="price">{product[0].price}<span>€</span></h3>
             <button class="buy" on:click={addToCart}>Buy now</button>
             <div class="information-panes">
+                <div class="information-buttons">
+
+                    {#if descriptionShown}
+                        <button class="active">Description</button>
+                    {:else}
+                        <button
+                            class="disabled"
+                            on:click={() => (
+                                (descriptionShown = !descriptionShown),
+                                (shippingShown = false),
+                                (featuresShown = false)
+                            )}>Description</button
+                        >
+                    {/if}
+                    {#if featuresShown}
+                        <button class="active">Features</button>
+                    {:else}
+                        <button
+                            class="disabled"
+                            on:click={() => (
+                                (featuresShown = !featuresShown),
+                                (shippingShown = false),
+                                (descriptionShown = false)
+                            )}>Features</button
+                        >
+                    {/if}
+                    {#if shippingShown}
+                        <button class="active">Shipping</button>
+                    {:else}
+                        <button
+                            class="disabled"
+                            on:click={() => (
+                                (shippingShown = !shippingShown),
+                                (descriptionShown = false),
+                                (featuresShown = false)
+                            )}>Shipping</button
+                        >
+                    {/if}
+                </div>
                 {#if descriptionShown}
-                    <button class="active">Description</button>
-                {:else}
-                    <button
-                        class="disabled"
-                        on:click={() => (
-                            (descriptionShown = !descriptionShown),
-                            (shippingShown = false),
-                            (featuresShown = false)
-                        )}>Description</button
-                    >
+                    <div class="description">{@html products[0].description}</div>
                 {/if}
                 {#if featuresShown}
-                    <button class="active">Features</button>
-                {:else}
-                    <button
-                        class="disabled"
-                        on:click={() => (
-                            (featuresShown = !featuresShown),
-                            (shippingShown = false),
-                            (descriptionShown = false)
-                        )}>Features</button
-                    >
+                    <div class="features">{@html products[0].features}</div>
                 {/if}
                 {#if shippingShown}
-                    <button class="active">Shipping</button>
-                {:else}
-                    <button
-                        class="disabled"
-                        on:click={() => (
-                            (shippingShown = !shippingShown),
-                            (descriptionShown = false),
-                            (featuresShown = false)
-                        )}>Shipping</button
-                    >
-                {/if}
-                {#if descriptionShown}
-                    <p class="description">{products[0].description}</p>
-                {/if}
-                {#if featuresShown}
-                    <p class="features">{products[0].features}</p>
-                {/if}
-                {#if shippingShown}
-                    <p class="shipping">{shipping}</p>
+                    <div class="shipping">{@html shipping}</div>
                 {/if}
             </div>
         </div>
@@ -134,9 +137,17 @@
         justify-content: space-around;
     }
     .information {
+        width: 35%;
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .information-panes {
+      width: 90%
+    }
+    .information-buttons {
+      display:flex;
+      justify-content: space-between;
     }
     .title {
         margin: 0;
@@ -173,7 +184,6 @@
         color: white;
         height: 50px;
         width: 200px;
-        margin: 0 0 0 10px;
     }
     button.disabled {
         font-weight: bold;
@@ -186,12 +196,19 @@
         color: white;
         height: 50px;
         width: 200px;
-        margin: 0 0 0 10px;
     }
+    /* .description, .features, .shipping {
+
+        font-size: 22px;
+        font-weight: bold;
+    } */
 
     @media only screen and (max-width: 768px) {
         .title {
             font-size: 28px;
+        }
+        .information {
+            width: 100%
         }
 
         .container {
@@ -213,7 +230,7 @@
             font-size: 12px;
         }
 
-        p {
+        .description, .features, .shipping {
             text-align: center;
         }
         .secondary-images {
