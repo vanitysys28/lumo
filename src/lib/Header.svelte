@@ -3,7 +3,7 @@
     export let navbar_search;
     export let navbar_cart;
 
-    let mobilemenushown = false;
+    let mobilemenushown;
 
     function showMobileMenu() {
         mobilemenushown = !mobilemenushown;
