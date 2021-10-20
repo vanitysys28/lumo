@@ -11,7 +11,7 @@
 </script>
 
 {#if mobilemenushown == true}
-    <MobileMenu />
+    <MobileMenu bind:mobilemenushown/>
 {/if}
 
 <section>
