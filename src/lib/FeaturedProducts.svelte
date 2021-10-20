@@ -1,5 +1,5 @@
 <script>
-    export let products;
+	import { products } from "../stores/store.js"    
 </script>
 
 <section>

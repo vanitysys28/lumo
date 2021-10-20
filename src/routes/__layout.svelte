@@ -6,7 +6,7 @@
     import '../global.css'
 </script>
 
-<Header {navbar_search}{navbar_cart} ></Header>
+<Header {navbar_search}{navbar_cart}></Header>
 <slot></slot>
 <Information></Information>
 <Footer {paymentmethods}{socials} ></Footer>

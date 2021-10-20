@@ -1,7 +1,18 @@
 <script>
+    import MobileMenu from "./MobileMenu.svelte";
     export let navbar_search;
     export let navbar_cart;
+
+    let mobilemenushown = false;
+
+    function showMobileMenu() {
+        mobilemenushown = !mobilemenushown;
+    }
 </script>
+
+{#if mobilemenushown == true}
+    <MobileMenu />
+{/if}
 
 <section>
     <div class="container">
@@ -22,14 +33,14 @@
                     >
                 </li>
                 <li class="cart">
-                    <a class = "cart-link" href="/cart"
+                    <a class="cart-link" href="/cart"
                         ><img
                             src={navbar_cart[0].src}
                             alt={navbar_cart[0].alt}
                         /></a
                     >
                 </li>
-                <li class="hamburger-menu">
+                <li class="hamburger-menu" on:click={showMobileMenu}>
                     <img
                         src="/images/Header/Hamburger.svg"
                         alt={navbar_cart[0].alt}
@@ -86,11 +97,14 @@
         .hamburger-menu {
             display: flex;
         }
-        .home, .catalog, .search, .about-us {
+        .home,
+        .catalog,
+        .search,
+        .about-us {
             display: none;
         }
         .cart-link {
-            display: flex
+            display: flex;
         }
     }
 </style>
