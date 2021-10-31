@@ -4,18 +4,18 @@
     <div class="container">
         <img
             class="hero-image-1"
-            src="https://ik.imagekit.io/ezwfmke3nhh/Hero_Image_1_Q2c8o9h1E.png"
+            src="https://ik.imagekit.io/ezwfmke3nhh/Hero/Hero_Image_1.png"
             alt=""
         />
         <img
             class="hero-image-mobile"
-            src="https://ik.imagekit.io/ezwfmke3nhh/Hero_Image_Mobile_1__82GBioplo.png"
+            src="https://ik.imagekit.io/ezwfmke3nhh/Hero/Hero_Image_Mobile.png"
             alt=""
         />
         <h1 class="hero-text">Enlighten<br />your<br />life.</h1>
         <img
             class="hero-image-2"
-            src="https://ik.imagekit.io/ezwfmke3nhh/Hero_Image_2_BzbsrLpyP.png"
+            src="https://ik.imagekit.io/ezwfmke3nhh/Hero/Hero_Image_2.png"
             alt=""
         />
         <!-- <div class="images-left"> 

@@ -9,17 +9,7 @@
         {#each products as product}
             <div class="cards">
                 <a href="/products/{product.title}">
-                    <picture>
-                        <source
-                            type="image/webp"
-                            srcset={product.webp_featured_image}
-                        />
-                        <source
-                            type="image/png"
-                            srcset={product.featured_image}
-                        />
-                        <img src={product.featured_image} alt="" />
-                    </picture>
+                    <img src={product.featured_image} alt="">
                 </a>
                 <a href="/products/{product.title}">
                     <div>{product.title}</div>
