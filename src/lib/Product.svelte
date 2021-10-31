@@ -1,8 +1,6 @@
 <script>
     import { getStores } from "$app/stores";
-    import { cartitems } from "../stores/store.js";
-    export let products;
-    export let shipping;
+    import { cartitems, products, shipping } from "../stores/store.js";
 
     const { page } = getStores();
 
@@ -17,22 +15,25 @@
     let producttitle = product[0].title;
     let cartproduct;
 
+    let variantactive = 'black';
+
     function addToCart() {
-        if ($cartitems.find((o) => o.title === producttitle)) {
+        if ($cartitems.find((o) => o.title + o.variant === producttitle + variantactive)) {
             console.log("Product already in cart, increased quantity");
-            cartproduct = $cartitems.find((o) => o.title === producttitle);
+            cartproduct = $cartitems.find((o) => o.title + o.variant === producttitle + variantactive);
             cartproduct.quantity += 1;
             sessionStorage.setItem("cart", JSON.stringify($cartitems));
+            $cartitems = $cartitems
         } else {
             $cartitems.push({
                 title: product[0].title,
-                variant: product[0].variant,
+                variant: variantactive,
                 featured_image: product[0].featured_image,
-                // webp_featured_image: product[0].webp_featured_image,
                 quantity: 1,
                 price: product[0].price,
             });
             sessionStorage.setItem("cart", JSON.stringify($cartitems));
+            $cartitems = $cartitems
         }
     }
 </script>
@@ -45,28 +46,9 @@
                 src={product[0].featured_image}
                 alt=""
             />
-            <!-- <picture>
-                    <source
-                        type="image/webp"
-                        srcset={product[0].webp_featured_image}
-                    />
-                    <source
-                        type="image/png"
-                        srcset={product[0].featured_image}
-                    />
-                    <img src={product[0].featured_image} alt="" />
-                </picture> -->
             <div class="secondary-images">
                 {#each product[0].images as image}
                     <img src={image.img} alt="" />
-                    <!-- <picture>
-                        <source
-                            type="image/webp"
-                            srcset={product[0].webp_images[0].img}
-                        />
-                        <source type="image/png" srcset={image.img} />
-                        <img src={image.img} alt="" />
-                    </picture> -->
                 {/each}
             </div>
         </div>
@@ -74,6 +56,16 @@
             <h2 class="title">{product[0].title}</h2>
             <h3 class="price">{product[0].price}<span>€</span></h3>
             <button class="buy" on:click={addToCart}>Buy now</button>
+            <div class="variant-selector-container">
+                {#each product[0].variants as variant}
+                <!-- <button class="variant-active">{variant}</button> -->
+                {#if variant === "black"}
+                    <button class:variant-active="{variantactive === 'black'}" on:click="{() => variantactive = 'black'}">{variant}</button>
+                    {:else}
+                    <button class:variant-active="{variantactive === 'white'}" on:click="{() => variantactive = 'white'}">{variant}</button>
+                    {/if}
+                {/each}
+            </div>
             <div class="information-panes">
                 <div class="information-buttons">
 
@@ -197,7 +189,40 @@
         height: 50px;
         width: 200px;
     }
-    /* .description, .features, .shipping {
+    .variant-active {
+        font-weight: bold;
+        font-size: 22px;
+        text-transform: uppercase;
+        text-align: center;
+        background: #707070 !important;
+        border-radius: 80px;
+        border-style: none;
+        color: white;
+        height: 50px;
+        width: 200px;
+        margin: 0;
+    }
+    .variant-selector-container button {
+        font-weight: bold;
+        font-size: 22px;
+        text-transform: uppercase;
+        background-color: rgba(112, 112, 112, 0);
+        text-align: center;
+        border-radius: 80px;
+        border-style: none;
+        color: white;
+        height: 50px;
+        width: 200px;
+        margin: 0;
+    }
+    .variant-selector-container {
+        background-color: rgba(112, 112, 112, 0.3);
+        border-radius: 100px;
+        padding: 5px;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+        /* .description, .features, .shipping {
 
         font-size: 22px;
         font-weight: bold;

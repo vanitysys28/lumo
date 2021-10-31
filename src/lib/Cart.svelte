@@ -13,7 +13,7 @@
 
     const increaseQuantity = (product) => {
         for (let cartitem of $cartitems) {
-            if (cartitem.title === product.title) {
+            if (cartitem.title+cartitem.variant === product.title+product.variant) {
                 product.quantity += 1;
                 $cartitems = $cartitems;
                 sessionStorage.setItem("cart", JSON.stringify($cartitems));
@@ -22,7 +22,7 @@
     };
     const decreaseQuantity = (product) => {
         for (let cartitem of $cartitems) {
-            if (cartitem.title === product.title) {
+            if (cartitem.title+cartitem.variant === product.title+product.variant) {
                 if (product.quantity > 1) {
                     product.quantity -= 1;
                     $cartitems = $cartitems;

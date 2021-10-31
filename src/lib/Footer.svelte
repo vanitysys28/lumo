@@ -1,6 +1,5 @@
 <script>
-    export let paymentmethods;
-    export let socials;
+    import { paymentmethods, socials } from "../stores/store.js";
 </script>
 
 <section>
@@ -88,16 +87,15 @@
         padding: 5px;
         width: 50px;
     }
-       @media only screen and (max-width: 768px) {
-      .links {
-        display: none;
-    }
-      .social {
-        display: none;
-    }
-    section {
-        justify-content: center
-    }
-
+    @media only screen and (max-width: 768px) {
+        .links {
+            display: none;
+        }
+        .social {
+            display: none;
+        }
+        section {
+            justify-content: center;
+        }
     }
 </style>
