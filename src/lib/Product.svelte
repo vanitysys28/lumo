@@ -128,6 +128,9 @@
         display: flex;
         justify-content: space-around;
     }
+    .media {
+        width: 500px;
+    }
     .information {
         width: 35%;
         display: flex;
@@ -148,9 +151,14 @@
     .price {
         margin: 0;
     }
+    .featured-image {
+        width: 500px;
+        border-radius: 80px;
+    }
     .secondary-images img {
         width: 100px;
         padding: 10px;
+        border-radius: 30px;
     }
     button.buy {
         font-weight: bold;
@@ -216,6 +224,7 @@
         margin: 0;
     }
     .variant-selector-container {
+        display: flex;
         background-color: rgba(112, 112, 112, 0.3);
         border-radius: 100px;
         padding: 5px;
@@ -244,6 +253,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: auto;
         }
 
         .featured-image {
@@ -251,8 +261,8 @@
         }
 
         .information-panes button {
-            width: 100px;
-            font-size: 12px;
+            width: 30%;
+            font-size: 14px;
         }
 
         .description, .features, .shipping {
@@ -261,7 +271,7 @@
         .secondary-images {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-around;
             width: 90%;
         }
         .secondary-images img {
@@ -269,5 +279,8 @@
             margin: 10px 1px;
             padding: 0;
         }
+            .variant-selector-container {
+        width: 70%;
+    }
     }
 </style>

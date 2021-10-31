@@ -67,6 +67,7 @@
 
     .cards img {
         width: 400px;
+        border-radius: 80px;
     }
     .cards picture {
         max-width: 400px;
@@ -103,6 +104,7 @@
         }
         .cards img {
             width: 100%;
+            border-radius: 20px;
         }
         .container {
             justify-content: space-between;

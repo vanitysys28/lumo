@@ -65,6 +65,7 @@
     .subcontainer img {
         width: 500px;
         overflow: hidden;
+        border-radius: 80px;
     }
     .product-title {
         margin-bottom: 0;
@@ -99,5 +100,8 @@
         h3 {
             margin-top: 10px;
         }
+        .subcontainer img {
+        border-radius: 20px;
+    }
     }
 </style>

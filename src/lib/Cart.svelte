@@ -207,6 +207,7 @@
     .product-images {
         width: 150px;
         margin: 10px 0;
+        border-radius: 30px;
     }
     .table-subtotal {
         display: flex;
@@ -296,7 +297,7 @@
         }
         .product-images {
             /* width: 100px; */
-            padding: 10px 0;
+            /* padding: 10px 0; */
         }
         .cart-header {
             font-size: 18px;
