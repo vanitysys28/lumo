@@ -1,5 +1,5 @@
 <script>
-	import { products } from "../stores/store.js"    
+    import { products } from "../stores/store.js";
 </script>
 
 <section>
@@ -7,17 +7,19 @@
 
     <div class="container">
         {#each products as product}
-            <div class="cards">
-                <a href="/products/{product.title}">
-                    <img src={product.featured_image} alt="">
-                </a>
-                <a href="/products/{product.title}">
-                    <div>{product.title}</div>
-                </a>
-                <a href="/products/{product.title}">
-                    <div>{product.price}<span>€</span></div>
-                </a>
-            </div>
+            {#if product.featured}
+                <div class="cards">
+                    <a href="/products/{product.title}">
+                        <img src={product.featured_image} alt="" />
+                    </a>
+                    <a href="/products/{product.title}">
+                        <div>{product.title}</div>
+                    </a>
+                    <a href="/products/{product.title}">
+                        <div>{product.price}<span>€</span></div>
+                    </a>
+                </div>
+            {/if}
         {/each}
     </div>
 
@@ -89,7 +91,7 @@
             font-size: 28px;
         }
         .cards {
-            width:45%;
+            width: 45%;
             margin: 0 0 20px 0;
         }
         .cards img {
