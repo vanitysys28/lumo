@@ -71,7 +71,7 @@
 
 <style>
     section {
-        margin-top: 50px;
+        margin-top: 25px;
         font-weight: bold;
         text-transform: uppercase;
     }

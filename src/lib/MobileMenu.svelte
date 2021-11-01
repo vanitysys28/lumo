@@ -55,8 +55,10 @@
 
     ul {
         list-style-type: none;
+        padding: 0;
+    margin: 0
     }
-
+ 
     li {
         font-size: 32px;
         margin: 10px 0 10px 0;

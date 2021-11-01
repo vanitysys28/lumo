@@ -9,6 +9,7 @@
             quantity: 1,
             featured_image: "https://ik.imagekit.io/ezwfmke3nhh/Kona/main.jpg",
             images: [
+                { img: "https://ik.imagekit.io/ezwfmke3nhh/Kona/main.jpg" },
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Kona/1.jpg" },
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Kona/2.jpg" },
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Kona/3.jpg" },
@@ -21,8 +22,8 @@
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Kona/10.jpg" },
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Kona/11.jpg" },
             ],
-            description: "<p>Product description</p>",
-            features: "<p>Product features</p>",
+            description: "<p>Inspired by true Swedish minimalism the Kona Floor Lamp is an iconic in design and aesthetics. A unique and innovative design combined with flawless modern lighting.</p><p>More a piece of art than a lamp. Light up your space beautifully, create the perfect ambience.</p><p>Your lamp is suitable for worldwide usage.&nbsp;</p>",
+            features: '<ul> <li > 1 + million colours </li> <li > 330 + multicolour effects </li> <li > Stop / start pausefunction </li> <li > Increase / decrease speed of running multicolour effects </li> <li > Aesthetically Designed </li> <li > Dimmable </li> <li > Remote Controlled(multiple lamps can be controlled via one remote) </li> <li > Height: 140 cm / 55 "&nbsp;</li> <li > Leg Length: 40 cm / 15.7 "&nbsp;</li> <li > Power: 100 - 240 v / 20 W / 50 hz </li> <li > Cord Length: 250 cm / 98 "</li> <li > UK / AUS / US / EUR plugs included with universal adapter 100 - 240 v </li> </ul>',
         },
         {
             title: "hikare",
@@ -32,6 +33,7 @@
             quantity: 1,
             featured_image: "https://ik.imagekit.io/ezwfmke3nhh/Hikare/main.png",
             images: [
+                { img: "https://ik.imagekit.io/ezwfmke3nhh/Hikare/main.png" },
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Hikare/1.png" },
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Hikare/2.png" },
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Hikare/3.png" },
@@ -41,8 +43,8 @@
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Hikare/7.png" },
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Hikare/8.png" },
             ],
-            description: "<p>Product description</p>",
-            features: "<p>Product features</p>",
+            description: "<p>A masterpiece of decor, blending minimalist style with modern and innovative lighting. Explore millions of possibilities, create endless ambiences. Perfect for living rooms and bedrooms.</p>",
+            features: '<ul><li>100-240v</li><li>20 W / 50hz</li><li>250cm / 98" cord length </li><li>UK/AUS / US / EUR plugs included </li><li>Dimmable Light</li > <li> Remote Controlled </li><li>Wall Mounted (fixtures &amp; screws included)</li > <li> Simple installation </li></ul >',
         },
         {
             title: "sutikku",
@@ -52,6 +54,7 @@
             quantity: 1,
             featured_image: "https://ik.imagekit.io/ezwfmke3nhh/Sutikku/main.jpg",
             images: [
+                { img: "https://ik.imagekit.io/ezwfmke3nhh/Sutikku/main.jpg" },
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Sutikku/1.jpg" },
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Sutikku/2.jpg" },
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Sutikku/3.jpg" },
@@ -64,12 +67,12 @@
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Sutikku/10.jpg" },
                 { img: "https://ik.imagekit.io/ezwfmke3nhh/Sutikku/11.jpg" },
             ],
-            description: "<p>Product description</p>",
-            features: "<p>Product features</p>",
+            description: "<p>Following in true minimalistic tradition, we have adopted two fascinating concepts to humans. <strong>Simplicity and light.</strong> Light up your surroundings and immerse yourself in the mystery of ambience.</p><p>More a piece of art than a lamp. Light up your space beautifully, create the perfect ambience. <strong>Perfect for living rooms &amp; bedrooms.</strong></p>",
+            features: '<ul> <li > 100 - 240 v(suitable worldwide)</li> <li > 20 W / 50 hz </li> <li > 250 cm / 98 " cord length</li> <li > UK / AUS / US / EUR plugs included </li> <li > Dimmable Light </li> <li > Remote Controlled - multiple lamps controlled via single remote </li> <li > Lamp Height: 150 cm / 59 "</li> <li > Base Diameter: 15 cm / 5.9 "</li> <li > Power Cord: 250 cm / 98 </li> </ul>',
         },
     ];
 
-    export let shipping = "<p>All orders are processed and shipped from the United Kingdom. We ship via DHL, DPD, FedEx.</p><p> We take extra care in ensuring that your goods are prepared and packaged ready to be transported around the world.</p>";
+    export let shipping = "<p>All orders are processed and shipped as soon as possible. We ship via DHL, DPD, FedEx, UPS.</p><p> We take extra care in ensuring that your goods are prepared and packaged ready to be transported around the world.</p>";
 
     export let paymentmethods = [
         { alt: "Visa", src: "/images/Footer/Visa.svg" },

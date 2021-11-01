@@ -15,15 +15,45 @@
     let producttitle = product[0].title;
     let cartproduct;
 
-    let variantactive = 'black';
+    let variantactive = "black";
+    let mainimage = product[0].images[0].img;
+    let mainimageindex = 0;
+
+    $: console.log(mainimageindex);
+
+    function previousImage() {
+        if (mainimageindex == 0) {
+            mainimage = product[0].images[product[0].images.length - 1].img;
+            mainimageindex = product[0].images.length - 1;
+        } else {
+            mainimage = product[0].images[mainimageindex - 1].img;
+            mainimageindex -= 1;
+        }
+    }
+
+    function nextImage() {
+        if (mainimageindex < product[0].images.length - 1) {
+            mainimage = product[0].images[mainimageindex + 1].img;
+            mainimageindex += 1;
+        } else {
+            mainimage = product[0].images[0].img;
+            mainimageindex = 0;
+        }
+    }
 
     function addToCart() {
-        if ($cartitems.find((o) => o.title + o.variant === producttitle + variantactive)) {
+        if (
+            $cartitems.find(
+                (o) => o.title + o.variant === producttitle + variantactive
+            )
+        ) {
             console.log("Product already in cart, increased quantity");
-            cartproduct = $cartitems.find((o) => o.title + o.variant === producttitle + variantactive);
+            cartproduct = $cartitems.find(
+                (o) => o.title + o.variant === producttitle + variantactive
+            );
             cartproduct.quantity += 1;
             sessionStorage.setItem("cart", JSON.stringify($cartitems));
-            $cartitems = $cartitems
+            $cartitems = $cartitems;
         } else {
             $cartitems.push({
                 title: product[0].title,
@@ -33,7 +63,7 @@
                 price: product[0].price,
             });
             sessionStorage.setItem("cart", JSON.stringify($cartitems));
-            $cartitems = $cartitems
+            $cartitems = $cartitems;
         }
     }
 </script>
@@ -41,15 +71,27 @@
 <section>
     <div class="container">
         <div class="media">
-            <img
-                class="featured-image"
-                src={product[0].featured_image}
-                alt=""
-            />
-            <div class="secondary-images">
+            <div class="images">
                 {#each product[0].images as image}
-                    <img src={image.img} alt="" />
+                    <img
+                        src={image.img}
+                        alt=""
+                        class:featured-image={mainimage === image.img}
+                        on:click={() => (mainimage = image.img)}
+                    />
                 {/each}
+                <div class="image-switcher">
+                    <img
+                        src="/images/Products/Previous.svg"
+                        alt=""
+                        on:click={previousImage}
+                    />
+                    <img
+                        src="/images/Products/Next.svg"
+                        alt=""
+                        on:click={nextImage}
+                    />
+                </div>
             </div>
         </div>
         <div class="information">
@@ -58,17 +100,24 @@
             <button class="buy" on:click={addToCart}>Buy now</button>
             <div class="variant-selector-container">
                 {#each product[0].variants as variant}
-                <!-- <button class="variant-active">{variant}</button> -->
-                {#if variant === "black"}
-                    <button class:variant-active="{variantactive === 'black'}" on:click="{() => variantactive = 'black'}">{variant}</button>
+                    <!-- <button class="variant-active">{variant}</button> -->
+                    {#if variant === "black"}
+                        <button
+                            class:variant-active={variantactive === "black"}
+                            on:click={() => (variantactive = "black")}
+                            >{variant}</button
+                        >
                     {:else}
-                    <button class:variant-active="{variantactive === 'white'}" on:click="{() => variantactive = 'white'}">{variant}</button>
+                        <button
+                            class:variant-active={variantactive === "white"}
+                            on:click={() => (variantactive = "white")}
+                            >{variant}</button
+                        >
                     {/if}
                 {/each}
             </div>
             <div class="information-panes">
                 <div class="information-buttons">
-
                     {#if descriptionShown}
                         <button class="active">Description</button>
                     {:else}
@@ -107,10 +156,12 @@
                     {/if}
                 </div>
                 {#if descriptionShown}
-                    <div class="description">{@html products[0].description}</div>
+                    <div class="description">
+                        {@html product[0].description}
+                    </div>
                 {/if}
                 {#if featuresShown}
-                    <div class="features">{@html products[0].features}</div>
+                    <div class="features">{@html product[0].features}</div>
                 {/if}
                 {#if shippingShown}
                     <div class="shipping">{@html shipping}</div>
@@ -138,11 +189,11 @@
         align-items: center;
     }
     .information-panes {
-      width: 90%
+        width: 90%;
     }
     .information-buttons {
-      display:flex;
-      justify-content: space-between;
+        display: flex;
+        justify-content: space-between;
     }
     .title {
         margin: 0;
@@ -152,10 +203,17 @@
         margin: 0;
     }
     .featured-image {
-        width: 500px;
-        border-radius: 80px;
+        width: 500px !important;
+        border-radius: 80px !important;
+        order: -1;
     }
-    .secondary-images img {
+    .images {
+        display: flex;
+        width: 500px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .images img {
         width: 100px;
         padding: 10px;
         border-radius: 30px;
@@ -231,7 +289,14 @@
         align-items: center;
         margin-bottom: 20px;
     }
-        /* .description, .features, .shipping {
+    .image-switcher {
+        display: none;
+    }
+    .features {
+        font-size: 22px;
+        font-weight: bold;
+    }
+    /* .description, .features, .shipping {
 
         font-size: 22px;
         font-weight: bold;
@@ -242,7 +307,7 @@
             font-size: 28px;
         }
         .information {
-            width: 100%
+            width: 100%;
         }
 
         .container {
@@ -257,7 +322,9 @@
         }
 
         .featured-image {
-            width: 90%;
+            width: 90% !important;
+            border-radius: 50px !important;
+            display: block !important;
         }
 
         .information-panes button {
@@ -265,22 +332,33 @@
             font-size: 14px;
         }
 
-        .description, .features, .shipping {
+        .description,
+        .features,
+        .shipping {
             text-align: center;
         }
-        .secondary-images {
+        .images {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            width: 90%;
+            justify-content: center;
+            width: 100%;
         }
-        .secondary-images img {
+        .images img {
             width: 100px;
-            margin: 10px 1px;
+            margin: 10px 5px;
             padding: 0;
+            display: none;
         }
-            .variant-selector-container {
-        width: 70%;
-    }
+        .variant-selector-container {
+            width: 70%;
+        }
+        .image-switcher {
+            display: flex;
+        }
+        .image-switcher img {
+            height: 20px;
+            width: 20px;
+            display: block;
+        }
     }
 </style>
