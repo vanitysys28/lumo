@@ -15,7 +15,7 @@
             <div class="line" />
             <li class="about-us" on:click={closeMenu}><a href="/about-us">About Us</a></li>
             <div class="line" />
-            <li class="search" on:click={closeMenu}>Search</li>
+            <li class="search" on:click={closeMenu}><a href="/contact-us">Contact Us</a></li>
             <div class="line" />
             <li class="cart" on:click={closeMenu}><a href="/cart">Cart</a></li>
         </ul>

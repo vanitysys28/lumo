@@ -28,14 +28,15 @@
                 <li class="home"><a href="/">Home</a></li>
                 <li class="catalog"><a href="/catalog">Catalog</a></li>
                 <li class="about-us"><a href="/about-us">About Us</a></li>
-                <li class="search">
+                <li class="about-us"><a href="/contact-us">Contact Us</a></li>
+                <!-- <li class="search">
                     <a href={"#"}
                         ><img
                             src={navbar_search[0].src}
                             alt={navbar_search[0].alt}
                         /></a
                     >
-                </li>
+                </li> -->
                 <li class="cart">
                     <a class="cart-link" href="/cart"
                         ><img

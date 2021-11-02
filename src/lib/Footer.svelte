@@ -6,8 +6,7 @@
     <div class="container-left">
         <ul class="links">
             <li><a href="/">Homepage</a></li>
-            <li>Contact</li>
-            <li>Search</li>
+            <li><a href="/contact-us">Contact</a></li>
         </ul>
         <ul class="social">
             {#each socials as social}
