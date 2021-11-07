@@ -16,6 +16,7 @@
     let cartproduct;
 
     let variantactive = "black";
+    let idactive = product[0].shopify_id[0];
     let mainimage = product[0].images[0].img;
     let mainimageindex = 0;
 
@@ -59,6 +60,7 @@
                 title: product[0].title,
                 variant: variantactive,
                 featured_image: product[0].featured_image,
+                id: idactive,
                 quantity: 1,
                 price: product[0].price,
             });
@@ -110,7 +112,7 @@
                     {:else}
                         <button
                             class:variant-active={variantactive === "white"}
-                            on:click={() => (variantactive = "white")}
+                            on:click={() => (variantactive = "white", idactive = product[0].shopify_id[1])}
                             >{variant}</button
                         >
                     {/if}

@@ -3,51 +3,110 @@
     import { onMount } from "svelte";
 
     onMount(() => {
-        // sessionStorage.setItem("cart", "[]");
-        // if (sessionStorage.getItem("cart") == null) {
-        //     $cartitems = sessionStorage.setItem("cart", "[]");
-        // } else {
+        var scriptURL =
+            "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
+        if (window.ShopifyBuy) {
+            if (window.ShopifyBuy.UI) {
+                ShopifyBuyInit();
+            } else {
+                loadScript();
+            }
+        } else {
+            loadScript();
+        }
+
+        function loadScript() {
+            var script = document.createElement("script");
+            script.async = true;
+            script.src = scriptURL;
+            (
+                document.getElementsByTagName("head")[0] ||
+                document.getElementsByTagName("body")[0]
+            ).appendChild(script);
+            script.onload = ShopifyBuyInit;
+        }
+
         $cartitems = JSON.parse(sessionStorage.getItem("cart"));
-        // }
     });
 
+    let checkouturl;
+    let checkoutButton;
+
+    function checkout() {
+        location.href = checkouturl;
+    }
+
+    function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+            domain: "vcnbyswqa5.myshopify.com",
+            storefrontAccessToken: "3d16542b8d2354142f3c1d3918fcc888",
+        });
+        ShopifyBuy.UI.onReady(client).then(function () {
+            client.checkout.create().then((checkout) => {
+                var lineItemsToAdd = [];
+
+                for (var i = 0; i < $cartitems.length; i++) {
+                    if ($cartitems[i].value != "") {
+                        lineItemsToAdd.push({
+                            variantId: $cartitems[i].id,
+                            quantity: $cartitems[i].quantity,
+                        });
+                    }
+                }
+
+                client.checkout
+                    .addLineItems(checkout.id, lineItemsToAdd)
+                    .then((checkout) => {
+                        checkouturl = checkout.webUrl;
+                        checkoutButton.style.opacity = 1;
+                        checkoutButton.disabled = false;
+                    });
+            });
+        });
+    }
+
     const increaseQuantity = (product) => {
+        checkoutButton.disabled = true;
+        checkoutButton.style.opacity = 0.2;
         for (let cartitem of $cartitems) {
-            if (cartitem.title+cartitem.variant === product.title+product.variant) {
+            if (
+                cartitem.title + cartitem.variant ===
+                product.title + product.variant
+            ) {
                 product.quantity += 1;
                 $cartitems = $cartitems;
                 sessionStorage.setItem("cart", JSON.stringify($cartitems));
+                ShopifyBuyInit();
             }
         }
     };
+
     const decreaseQuantity = (product) => {
+        checkoutButton.disabled = true;
+        checkoutButton.style.opacity = 0.2;
         for (let cartitem of $cartitems) {
-            if (cartitem.title+cartitem.variant === product.title+product.variant) {
+            if (
+                cartitem.title + cartitem.variant ===
+                product.title + product.variant
+            ) {
                 if (product.quantity > 1) {
                     product.quantity -= 1;
                     $cartitems = $cartitems;
                     sessionStorage.setItem("cart", JSON.stringify($cartitems));
-                    return;
+                    console.log($cartitems);
+                    ShopifyBuyInit();
                 } else {
                     $cartitems = $cartitems.filter(
                         (cartItem) => cartItem != product
                     );
                     sessionStorage.setItem("cart", JSON.stringify($cartitems));
+                    ShopifyBuyInit();
                 }
             }
         }
     };
 
-    // let subtotal;
-
-    // $: if ($cartitems.length > 0) {
-    //     subtotal = $cartitems.reduce(
-    //         (sum, cartitem) => sum + cartitem.price * cartitem.quantity,
-    //         0
-    //     );
-    // }
-
-     $: subtotal = $cartitems.reduce(
+    $: subtotal = $cartitems.reduce(
         (sum, cartitem) => sum + cartitem.price * cartitem.quantity,
         0
     );
@@ -138,7 +197,13 @@
                 <div class="second-col" />
                 <div class="third-col" />
                 <div class="button-container">
-                    <button class="checkout">Checkout</button>
+                    <button
+                        bind:this={checkoutButton}
+                        disabled
+                        on:click={checkout}
+                        style="opacity: 0.2"
+                        class="checkout">Checkout</button
+                    >
                 </div>
             </div>
         </div>

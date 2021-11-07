@@ -23,9 +23,6 @@
         text-transform: uppercase;
         text-align: center;
     }
-    .text-container {
-       
-    }
     p {
          text-align: center;
      }

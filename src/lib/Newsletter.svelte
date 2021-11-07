@@ -1,29 +1,48 @@
-<script></script>
+<script>
+    let subscribed = false;
+
+    function subscribe() {
+        if (email.length > 0) {
+            subscribed = true;
+        }
+    }
+
+    let email = "";
+</script>
 
 <section>
     <img class="blob1" src="/images/Blobs/blob1.svg" alt="" />
-        <img class="blob2" src="/images/Blobs/blob2.svg" alt="" />
+    <img class="blob2" src="/images/Blobs/blob2.svg" alt="" />
     <div>
         <h2 class="title">Newsletter</h2>
-        
     </div>
 
-    <p>Sales, news and more. <br />Delivered straight to your inbox.</p>
-    <p class="silent">PS: We hate spam too..</p>
-    <div class="container">
-        <div class="background">
-            <input class="input" type="text" />
-            <button>Subscribe<img class="subscribe-button-image" src="/images/Newsletter/subscribe-mobile.svg" alt=""></button>
+    {#if subscribed === false}
+        <p>Sales, news and more. <br />Delivered straight to your inbox.</p>
+        <p class="silent">PS: We hate spam too..</p>
+        <div class="container">
+            <div class="background">
+                <input class="input" bind:value={email} type="text" />
+                <button on:click={subscribe}
+                    >Subscribe<img
+                        class="subscribe-button-image"
+                        src="/images/Newsletter/subscribe-mobile.svg"
+                        alt=""
+                    /></button
+                >
+            </div>
         </div>
-    </div>
+    {:else}
+        <p>Thanks for subscribing!</p>
+    {/if}
 </section>
 
 <style>
     section {
-        position: relative
+        position: relative;
     }
     .subscribe-button-image {
-        display:none;
+        display: none;
     }
     .blob1 {
         position: absolute;
@@ -78,7 +97,7 @@
     }
     .title {
         text-transform: uppercase;
-        margin:0
+        margin: 0;
     }
     .silent {
         font-size: 16px;
@@ -110,7 +129,7 @@
             width: 20px;
         }
         .background {
-            display:flex;
+            display: flex;
         }
         .input {
             width: 200px;
