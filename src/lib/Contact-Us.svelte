@@ -5,7 +5,7 @@
         <h2>Contact Us</h2>
         <div class="text-container">
             <p>
-                If you have any questions and queries, please do not hesitate to contact us by sending an email to: <a href="mailto:support@lumo.com">support@lumo.com</a>  
+                If you have any questions and queries, please do not hesitate to contact us by sending an email to: <a href="mailto:support@asensdesign.com">support@asensdesign.com</a>  
             </p>
             <p>
                 We do our best to answer to your emails and queries as fast as humanly possible.
