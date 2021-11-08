@@ -38,7 +38,7 @@
 
     function ShopifyBuyInit() {
         var client = ShopifyBuy.buildClient({
-            domain: "vcnbyswqa5.myshopify.com",
+            domain: "checkout.asensdesign.com",
             storefrontAccessToken: "3d16542b8d2354142f3c1d3918fcc888",
         });
         ShopifyBuy.UI.onReady(client).then(function () {
