@@ -5,18 +5,13 @@
         <h2>About Us</h2>
         <div class="text-container">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros
-                erat, volutpat ut nibh ac, suscipit tempus tellus. Curabitur id
-                scelerisque lacus, quis sollicitudin turpis. Donec faucibus facilisis
-                leo vel mattis. Duis volutpat dolor tempus, pulvinar ex ac, blandit
-                nibh. Morbi tempus quam a purus eleifend rhoncus. Morbi quis lacus nisl.
-                In id eleifend elit, in pharetra nunc.
+                Åsens was born in Sweden, and aims towards bringing comptemporary, modern and refreshing design. Light is what makes us feel alive, hence the reason why we decided to focus our products on it.
             </p>
             <p>
-                Sed sed odio felis. Donec tempus efficitur feugiat. Nulla facilisi. Sed
-                ut tortor eu quam faucibus egestas. Mauris mollis sapien eu odio
-                faucibus cursus. Nunc luctus tincidunt metus, id dignissim urna. Etiam
-                sapien lorem, rutrum vel condimentum vel, accumsan id sapien.
+                We acquired many years of knowledge in developing and manufacturing quality products, and are proud to make them available to all of you today. 
+            </p>
+            <p>
+                Our true goal is to build a global design house, redefining the trends in the light industry, through modern, simplistic and refreshing creations.
             </p>
             
         </div>
@@ -31,6 +26,7 @@
     section {
         display: flex;
         justify-content: center;
+        margin-bottom: 50px;
     }
     .container {
         width: 800px;

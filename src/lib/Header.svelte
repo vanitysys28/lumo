@@ -21,7 +21,7 @@
 <section>
     <div class="container">
         <div class="logo">
-            <a href="/">Lümo</a>
+            <a href="/">Åsens</a>
         </div>
         <div class="navbar-right">
             <ul>

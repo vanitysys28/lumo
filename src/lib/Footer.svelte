@@ -19,7 +19,7 @@
     </div>
 
     <div class="container-right">
-        <div class="logo">© Lümo 2021</div>
+        <div class="logo">© Åsens 2021</div>
 
         <div class="payments">
             {#each paymentmethods as paymentmethod}
