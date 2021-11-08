@@ -16,6 +16,7 @@
     "type": "module",
     "dependencies": {
         "-": "^0.0.1",
-        "D": "^1.0.0"
+        "D": "^1.0.0",
+        "shopify-buy": "^2.13.0"
     }
 }
