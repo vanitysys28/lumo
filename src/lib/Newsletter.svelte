@@ -122,6 +122,7 @@
             font-size: 0;
             display: flex;
             justify-content: center;
+            align-items: center;
             width: 40px;
             height: 40px;
         }
