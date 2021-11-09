@@ -46,6 +46,9 @@
     .container-left {
         display: flex;
     }
+    ul {
+        margin: 0;
+    }
     .links {
         padding: 0 20px;
         list-style-type: none;
