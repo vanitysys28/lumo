@@ -7,6 +7,7 @@
     let descriptionShown = true;
     let featuresShown = false;
     let shippingShown = false;
+    let buyButton;
 
     var product = products.filter(
         (a) => a.title == $page.path.split("/").pop()
@@ -48,7 +49,6 @@
                 (o) => o.title + o.variant === producttitle + variantactive
             )
         ) {
-            console.log("Product already in cart, increased quantity");
             cartproduct = $cartitems.find(
                 (o) => o.title + o.variant === producttitle + variantactive
             );
@@ -67,6 +67,14 @@
             sessionStorage.setItem("cart", JSON.stringify($cartitems));
             $cartitems = $cartitems;
         }
+        buyButton.innerHTML = "Added to cart";
+        buyButton.style.opacity = 0.5;
+        buyButton.disabled = true;
+        setTimeout(function () {
+            buyButton.innerHTML = "Buy now";
+            buyButton.style.opacity = 1;
+            buyButton.disabled = false;
+        }, 1500);
     }
 </script>
 
@@ -99,7 +107,9 @@
         <div class="information">
             <h2 class="title">{product[0].title}</h2>
             <h3 class="price">{product[0].price}<span>€</span></h3>
-            <button class="buy" on:click={addToCart}>Buy now</button>
+            <button bind:this={buyButton} class="buy" on:click={addToCart}
+                >Buy now</button
+            >
             <div class="variant-selector-container">
                 {#each product[0].variants as variant}
                     <!-- <button class="variant-active">{variant}</button> -->
@@ -112,8 +122,10 @@
                     {:else}
                         <button
                             class:variant-active={variantactive === "white"}
-                            on:click={() => (variantactive = "white", idactive = product[0].shopify_id[1])}
-                            >{variant}</button
+                            on:click={() => (
+                                (variantactive = "white"),
+                                (idactive = product[0].shopify_id[1])
+                            )}>{variant}</button
                         >
                     {/if}
                 {/each}
