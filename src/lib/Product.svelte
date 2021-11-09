@@ -346,11 +346,11 @@
             font-size: 14px;
         }
 
-        .description,
+        /* .description,
         .features,
         .shipping {
-            text-align: center;
-        }
+            
+        } */
         .images {
             display: flex;
             flex-wrap: wrap;
