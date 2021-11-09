@@ -9,7 +9,7 @@
         />
         <img
             class="hero-image-mobile"
-            src="https://ik.imagekit.io/ezwfmke3nhh/Hero/Hero_Image_Mobile.png"
+            src="https://ik.imagekit.io/ezwfmke3nhh/Hero/Hero_Image_Mobile_3.png"
             alt=""
         />
         <h1 class="hero-text">Enlighten<br />your<br />life.</h1>
