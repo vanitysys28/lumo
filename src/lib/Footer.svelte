@@ -8,14 +8,14 @@
             <li><a href="/">Homepage</a></li>
             <li><a href="/contact-us">Contact</a></li>
         </ul>
-        <ul class="social">
+        <!-- <ul class="social">
             {#each socials as social}
                 <div class="social-item">
                     <img src={social.src} alt={social.alt} />
                     <li>{social.name}</li>
                 </div>
             {/each}
-        </ul>
+        </ul> -->
     </div>
 
     <div class="container-right">
