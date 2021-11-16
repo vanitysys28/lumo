@@ -325,7 +325,9 @@
     .discount {
         margin: 0 0 0 30px;
         color:#df6e6a;
-        text-decoration: line-through 3px;
+        text-decoration: line-through;
+        text-decoration-thickness: 3px;
+
     }
 
     @media only screen and (max-width: 768px) {
