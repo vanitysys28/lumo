@@ -6,6 +6,7 @@
             variants: ["black", "white"],
             featured: true,
             price: 150,
+            compare_price: 200,
             quantity: 1,
             featured_image: "https://ik.imagekit.io/ezwfmke3nhh/Kona/main.jpg",
             images: [
@@ -31,6 +32,7 @@
             variants: ["black", "white"],
             featured: true,
             price: 160,
+            compare_price: 210,
             quantity: 1,
             featured_image: "https://ik.imagekit.io/ezwfmke3nhh/Sutikku/main.jpg",
             images: [
@@ -56,6 +58,7 @@
             variants: ["black", "white"],
             featured: true,
             price: 150,
+            compare_price: 200,
             quantity: 1,
             featured_image: "https://ik.imagekit.io/ezwfmke3nhh/Hikare/main.png",
             images: [

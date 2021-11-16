@@ -106,7 +106,10 @@
         </div>
         <div class="information">
             <h2 class="title">{product[0].title}</h2>
-            <h3 class="price">{product[0].price}<span>€</span></h3>
+            <div class="price-container">
+                <h3 class="price">{product[0].price}<span>€</span></h3>
+                <h3 class="discount">{product[0].compare_price}<span>€</span></h3>
+            </div>
             <button bind:this={buyButton} class="buy" on:click={addToCart}
                 >Buy now</button
             >
@@ -315,6 +318,15 @@
         font-size: 22px;
         font-weight: bold;
     } */
+    .price-container {
+        display: flex
+    }
+
+    .discount {
+        margin: 0 0 0 30px;
+        color:#df6e6a;
+        text-decoration: line-through 3px;
+    }
 
     @media only screen and (max-width: 768px) {
         .title {
