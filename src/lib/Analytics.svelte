@@ -3,7 +3,7 @@
   const { page } = getStores();
   $: {
     if (typeof gtag !== "undefined"){
-      gtag("config", "UA-SOMEANALYTICSID-1", {
+      gtag("config", "G-9PVX16WZC1", {
         page_path: $page.path
       });
     }
