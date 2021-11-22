@@ -15,9 +15,14 @@
                     <a href="/products/{product.title}">
                         <div>{product.title}</div>
                     </a>
-                    <a href="/products/{product.title}">
-                        <div>{product.price}<span>€</span></div>
-                    </a>
+                    <div class="price-container">
+                        <a href="/products/{product.title}">
+                            <div>{product.price}<span>€</span></div>
+                        </a>
+                        <a class="discount" href="/products/{product.title}">
+                            <div>{product.compare_price}<span>€</span></div>
+                         </a>
+                    </div>
                 </div>
             {/if}
         {/each}
@@ -80,6 +85,16 @@
         color: white;
         padding: 10px 80px;
         cursor: pointer;
+    }
+    .price-container {
+        display: flex;
+        justify-content: center;
+    }
+    .discount {
+        margin: 0 0 0 20px;
+        color:#df6e6a;
+        text-decoration: line-through;
+        text-decoration-thickness: 3px;
     }
 
     @media only screen and (max-width: 768px) {
